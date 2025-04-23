@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\HeroSection>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Category>
  */
-class HeroSectionFactory extends Factory
+class ServiceFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,8 +17,7 @@ class HeroSectionFactory extends Factory
     public function definition(): array
     {
         return [
-            'url'        => $this->faker->url(),
-            'title'      => $this->faker->sentence()  
-            ];
+            //
+        ];
     }
 }

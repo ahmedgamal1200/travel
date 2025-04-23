@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Footer;
 use App\Models\HeroSection;
 use App\Models\Review;
+use App\Models\Service;
 use App\Models\Testimonial;
 use App\Models\Tour;
 use App\Models\User;
@@ -39,13 +40,13 @@ class DatabaseSeeder extends Seeder
             'image' => 'test.jpg'
         ]);
 
-        Review::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-            'rating' => 5,
-            'review' => 'This is a test review.',
+        // Review::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        //     'rating' => 5,
+        //     'review' => 'This is a test review.',
             
-        ]);
+        // ]);
 
         Tour::factory()->create([            
             'name' => 'Test User',
@@ -57,17 +58,23 @@ class DatabaseSeeder extends Seeder
             'images' => json_encode(['image1.jpg', 'image2.jpg']),
             'category_id' => 1,
         ]);
+        Service::factory()->create([
+            'name'            => 'Test Service',
+            'slug'            => 'Test Service',
+            'description'     => 'Test Service' ,
+            'price'           => 100.00,
+            'compare_price'   => 120.00,
+            'note'            => 'Test Service',
+            'images'          => json_encode(['image1.jpg', 'image2.jpg']),
+            'icon'            =>  'test icon',
+        ]);
 
         Footer::factory()->create([
             'value'    => 'test value',
             'key'   => ' test key',
         ]);
 
-        HeroSection::factory()->create([
-            'url'    => 'https://example.com',
-            'title'  => 'Test title'
-
-        ]);
+        HeroSection::factory(10)->create();
 
 
     }
