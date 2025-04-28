@@ -24,6 +24,7 @@ return new class extends Migration
             $table->unsignedInteger('kids_count')->nullable(); // عدد الأطفال
             $table->text('note')->nullable();
 
+            
             $table->foreignIdFor(Service::class)
                 ->nullable()
                 ->constrained()
