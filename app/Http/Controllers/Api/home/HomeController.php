@@ -27,14 +27,12 @@ class HomeController extends Controller
     public function index()
     {
         //pagination
-
         $heroSection = HeroSectionResource::collection(HeroSection::paginate(4));
         $tours= TourResource::collection(Tour::paginate(3));
         $services= ServiceResource::collection(Service::paginate(3));
         $testimonials= testimonialsResource::collection(Testimonial::paginate(3));
         $about= AboutResource::collection(About::paginate(3));
         $footer= FooterResource::collection(Footer::paginate(3));
-
         $data = [
             'heroSection'  => $heroSection,
             'tours'        => $tours,

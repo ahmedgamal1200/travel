@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
 
         Category::factory()->create([
             'name' => 'Test Category',
-            'item' => 'test-category',
+            'item' => 10,
             'slug' => 'This is a test category description.',
             'image' => 'category.jpg',
         ]);        
@@ -40,13 +40,13 @@ class DatabaseSeeder extends Seeder
             'image' => 'test.jpg'
         ]);
 
-        // Review::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        //     'rating' => 5,
-        //     'review' => 'This is a test review.',
+        Review::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+            'rating' => 5,
+            'review' => 'This is a test review.',
             
-        // ]);
+        ]);
 
         Tour::factory()->create([            
             'name' => 'Test User',
@@ -70,12 +70,12 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Footer::factory()->create([
-            'value'    => 'test value',
-            'key'   => ' test key',
+            'value' => json_encode(['key' => 'value']),
+            'key' => 'test_key',
         ]);
-
         HeroSection::factory(10)->create();
 
+        
 
     }
 }
